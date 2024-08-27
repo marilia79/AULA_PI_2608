@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora IMC</title>
+
+
+</head>
+
+<body>
+
+    <div class=" container">
+        <main>
+            <div>
+                <label for="peso">Qual seu peso (em kg)?</label>
+                <input type="number" name="peso" id="peso" step="0.1">
+            </div>
+            <label for="altura">Qual sua altura (em cm) ?</label>
+            <input type="number" name="altura" id="altura" step="1">
+            <div><button>Calcular</button></div>
+            <p class="resultado">
+                resultado:
+            </p>
+        </main>
+    </div>
+    <script>
+
+        // coloca value para pegar o valor dentro do campo do forulário, caso não tivesse um campo aí não usa o value
+        let altura = document.getElementById("altura");
+        let peso = document.getElementById("peso");
+        let resultado = document.querySelector(".resultado");
+        let botao = document.querySelector("button");
+
+        // função que calcula -só é executada quando clicar no botão
+
+        function calcular() {
+            console.log("calculando...");
+            let imc = peso.value / (altura.value / 100 * altura.value / 100);
+            resultado.innerHTML = Number(imc.toFixed(1));
+
+        }
+
+
+
+        // associa o evento de click ao botão e chama a função "calcular"
+        botao.addEventListener("click", calcular);
+
+    </script>
+
+</body>
+
+</html>

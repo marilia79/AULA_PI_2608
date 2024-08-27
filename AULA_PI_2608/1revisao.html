@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revisão JS</title>
+</head>
+<body>
+    <h1>Título</h1>
+    <div id="minhadiv">Minha Div</div>
+    <p>Primeiro parágrafo</p>
+    <p>Segundo parágrafo</p>
+
+    <script>
+        // javascript é para manipular o html
+        //comentário de uma linha
+        /*
+        comentário de várias linhas
+        */ 
+       let a= 2;
+       const d =5;
+
+       if(a>1){
+        console.log("a é maior que 1");
+       }
+       else{
+        console.log("a é menor ou igual a 1")
+       }
+
+    //    laçõs de repetição
+       while(a<10){
+        console.log(a);
+        a++;
+       }
+       for(let i=0; i<10; i++){
+        // alert("i vale "+i);
+        console.log("")
+       }
+
+    //    manipulação de elementos com o objeto document
+       let div= document.getElementById("minhadiv");
+       div.innerHTML = "Mudei a div via JS";
+       div.style.backgroundColor = "#FFFF00";
+
+       let titulo = document.querySelector("h1");
+    //    para mudar o texto dentro da tag
+    titulo.innerHTML = "<em>Mudei o título via JS</em>";
+
+    // array de parágrafos (elementos)
+
+    let paragrafos = document.querySelectorAll("p");
+    for(let i in paragrafos){
+        paragrafos[i].innerHTML = "mudei parágrafo na posição "+ i;
+    }
+
+    // desafio de código: Trocar os textos da div com o h1 e vice-versa
+    
+    let aux = titulo.innerHTML;
+    titulo.innerHTML = div.innerHTML;
+    div.innerHTML =aux; 
+
+    </script>
+</body>
+</html>
